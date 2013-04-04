@@ -6,7 +6,7 @@ define(['services/utilService'], function (utilService) {
 //        roadmap {
 //            name: '',
 //            type: 'Monthly' or 'Quarterly',
-//            startTime: 'M/Y'
+//            startDate: { 'month': m, 'year': y }
 //            themes: [
 //                      {
 //                          name:
@@ -29,7 +29,7 @@ define(['services/utilService'], function (utilService) {
                 return roadmaps;
             },
             addRoadmap: function (roadmap) {
-                roadmaps.push(roadmaps);
+                roadmaps.push(roadmap);
                 utilService.saveToLocal(key, roadmaps);
             },
             deleteRoadmap: function (roadmaps, roadmapIndex) {

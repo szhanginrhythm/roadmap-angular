@@ -5,23 +5,34 @@ define(['angular', 'app', 'config'], function (angular, app, config) {
 
     return app.config(['$routeProvider', function ($routeProvider) {
 
-        $routeProvider.when('/monthly',
+        $routeProvider.when('/',
             config.getResolveRoute({
-                templateUrl: 'app/partials/monthly.html',
-                controllerName: 'MonthlyCtrl',
-                controllerFile: 'controllers/monthlyCtrl',
+                templateUrl: 'app/partials/list.html',
+                controllerName: 'RoadmapListCtrl',
+                controllerFile: 'controllers/roadmapListCtrl',
+                serviceFiles: ['services/roadmapService', 'services/utilService']
+            })
+            );
+
+        $routeProvider.when('/roadmap/:roadmap_id',
+            config.getResolveRoute({
+                templateUrl: 'app/partials/roadmap.html',
+                controllerName: 'RoadmapCtrl',
+                controllerFile: 'controllers/roadmapCtrl',
                 serviceFiles: ['services/utilService']
             })
             );
 
+        /**
         $routeProvider.when('/quarterly',
             config.getResolveRoute({
-                templateUrl: 'app/partials/quarterly.html',
+                templateUrl: 'app/partials/list.html',
                 controllerName: 'quarterlyCtrl',
                 controllerFile: 'controllers/quarterlyCtrl',
                 serviceFiles: ['services/utilService']
             })
             );
+        **/
     }]);
 
 });

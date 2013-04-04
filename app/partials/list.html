@@ -1,0 +1,27 @@
+<div class="roadmapListFrame">
+    <ul class="menu">
+        <li><a ng-click="createNew('Monthly')">+ Monthly</a></li>
+        <li><a ng-click="createNew('Quarterly')">+ Quarterly</a></li>
+    </ul>
+
+    <span>{{ title }}</span>
+
+    <div ng-show="roadmap" class="create-container">
+        <input ng-model="roadmap.name">
+
+        <div class="select-duration">
+            <select ng-model="roadmap.startDate" ng-options="duration for duration in durations"></select>
+        </div>
+
+        <button ng-click="saveRoadmap()">Save</button>
+    </div>
+
+    <ul>
+        <li ng-repeat="roadmap in roadmaps">
+            <span>{{ roadmap.name }} </span> | 
+            <span>{{ roadmap.type }} </span> | 
+            <span>{{ formattedDate(roadmap) }} </span>
+        </li>
+    </ul>
+
+</div>

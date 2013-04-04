@@ -1,8 +1,10 @@
-'use strict';
+/*global define, Cookie */
 
-define([], function(){
-    return ['utilService', function(){
-
+define([], function () {
+    return ['utilService', function () {
+        var year = new Date().getFullYear(),
+            months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+            quarters = ['Q1', 'Q2', 'Q3', 'Q4'];
         function saveToLocal(key, value) {
             if (window.localStorage) {
                 localStorage.setItem(key, JSON.stringify(value));
@@ -12,35 +14,50 @@ define([], function(){
         }
 
         function getFromLocal(key) {
-            var value = window.localStorage? localStorage.getItem(key): Cookie.read(key);
+            var value = window.localStorage ? localStorage.getItem(key) : Cookie.read(key),
+                return_val;
+
             if (value && value !== 'undefined') {
-                return JSON.parse(value);
+                return_val = JSON.parse(value);
             } else {
-                return [];
+                return_val = [];
             }
+            return return_val;
         }
 
-        function getMonth() {
-//            return [{id:'Jan', name:'Jan'},
-//                    {id:'Feb', name:'Feb'},
-//                    {id:'March', name:'March'},
-//                    {id:'April', name:'April'},
-//                    {id:'May', name:'May'},
-//                    {id:'June', name:'June'},
-//                    {id:'July', name:'July'},
-//                    {id:'Aug', name:'Aug'},
-//                    {id:'Sept', name:'Sept'},
-//                    {id:'Oct', name:'Oct'},
-//                    {id:'Nov', name:'Nov'},
-//                    {id:'Dec', name:'Dec'}
-//                    ];
-            return ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        function getMonths() {
+            return months;
+        }
+
+        function getQuarters() {
+            return quarters;
+        }
+
+        function getMonthIndex(option) {
+            var index = months.indexOf(option);
+            if (index === -1) {
+                index = (quarters.indexOf(option) * 3);
+            }
+            return { "month": index, "year" : year };
+        }
+
+        function getFormattedDate(type, date) {
+            var return_val;
+            if (type === "Monthly") {
+                return_val = date.year + " " + getMonths()[date.month];
+            } else {
+                return_val = date.year + " " + (getQuarters()[date.month / 3]);
+            }
+            return return_val;
         }
 
         return {
             saveToLocal: saveToLocal,
             getFromLocal: getFromLocal,
-            getMonth: getMonth
+            getMonths: getMonths,
+            getMonthIndex: getMonthIndex,
+            getQuarters: getQuarters,
+            getFormattedDate: getFormattedDate
         };
     }];
 });
