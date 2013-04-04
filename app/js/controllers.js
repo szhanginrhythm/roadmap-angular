@@ -1,5 +1,5 @@
-define(['angular', 'services'], function (angular) {
-	'use strict';
+/*global define */
 
-	return angular.module('myApp.controllers', ['myApp.services']);
+define(['angular', 'services'], function (angular) {
+    return angular.module('productRoadmap.controllers', ['productRoadmap.services']);
 });

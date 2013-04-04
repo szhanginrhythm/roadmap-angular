@@ -1,16 +1,18 @@
-define([
-	'angular',
-	'filters',
-	'services',
-	'directives',
-	'controllers',
-    'config'
-	], function (angular, filters, services, directives, controllers, config) {
-		'use strict';
+/*global define */
 
-		return angular.module('myApp',
-            ['myApp.controllers', 'myApp.filters', 'myApp.services', 'myApp.directives'],
-            function ($controllerProvider, $compileProvider, $provide, $filterProvider) {
+define([
+    'angular',
+    'filters',
+    'services',
+    'directives',
+    'controllers',
+    'config'
+], function (angular, filters, services, directives, controllers, config) {
+    'use strict';
+
+    return angular.module('productRoadmap',
+        ['productRoadmap.controllers', 'productRoadmap.filters', 'productRoadmap.services', 'productRoadmap.directives'],
+        function ($controllerProvider, $compileProvider, $provide, $filterProvider) {
             config.setAllProviders({
                 controllerProvider: $controllerProvider,
                 compileProvider: $compileProvider,
