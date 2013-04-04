@@ -1,10 +1,10 @@
-'use strict';
+/*global define */
+ 
+define(['services/utilService'], function (utilService) {
+    return ['productService', ['utilService', function (utilService) {
 
-define(['services/utilService'], function(utilService){
-    return ['productService', ['utilService', function(utilService){
-
-        var key = 'products';
-        var products = utilService.getFromLocal(key);
+        var key = 'products',
+            products = utilService.getFromLocal(key);
 
         return {
             getProducts: function () {
