@@ -1,10 +1,11 @@
 <div class="monthlyFrame">
     <span>{{title}}</span>
-    <input ng-model="monthlyRoadmap.name">
+    <input ng-model="product.name">
 
-    <select ng-model="monthlyRoadMap.test" ng-options="month as month for month in months">
+    <select ng-model="product.month" ng-options="month as month for month in months">
 
     </select>
 
-    {{monthlyRoadmap.name}} | {{monthlyRoadmap.test}}
+    {{product.name}} | {{product.month}}
+
 </div>
