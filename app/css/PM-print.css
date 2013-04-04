@@ -1,0 +1,24 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/ProductRoadMap\/sass\/marketcharter-print\.scss}line{font-family:\000037}}
+#validate_page .nav,
+#validate_page .user-tools,
+#validate_page .ui-dialog,
+#validate_page .slider-controls,
+#validate_page ul.level3,
+#validate_page .print-prompt {
+  display: none !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/ProductRoadMap\/sass\/marketcharter-print\.scss}line{font-family:\0000311}}
+#validate_page #summary-chart {
+  height: 4200px !important;
+  background: #fff;
+  -moz-border-radius: 12px 12px 12px 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  font-family: 'OceaniaRegular', Arial, sans-serif;
+  left: 0;
+  padding: 40px 40px 90px;
+  position: relative;
+  overflow: visible; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/ProductRoadMap\/sass\/marketcharter-print\.scss}line{font-family:\0000324}}
+#validate_page #summary-chart,
+#validate_page .item_level4 {
+  height: 4200px !important; }

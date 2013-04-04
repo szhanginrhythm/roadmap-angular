@@ -1,0 +1,24 @@
+@media only screen and (max-width: 480px) {
+	html, body{ font-size: 90%; }
+	.page-head-c, .page-body-c, .page-foot-c { width: 95%; }
+	.page-head { padding-top:16px; }	
+	.page-body-c { padding-top: 20px; }
+	.colx1 { width: 8%;}
+	.colx2 { width: 16%;}
+	.colx3 { width: 24%;}
+	.colx4 { width: 32%;}
+	.colx5 { width: 40%;}
+	.colx6 { width: 48%;}
+	.colx7 { width: 56%;}
+	.colx8 { width: 64%;}
+	.colx9 { width: 72%;}
+	.colx10 { width: 80%;}
+	.colx11 { width: 88%;}	
+	.colfull { width: 96%;}	
+	.colx1, .colx2, .colx3, .colx4, .colx5, .colx6, .colx7, .colx8, .colx9, .colx10, .colx11 { margin-right: 2px; }
+	.product-roadmap-grid-container .product-roadmap-list-heading, .product-roadmap-grid-container .product-list-row { width: 100%;}
+	.w-CreateProduct .column, .w-CreateProduct .spinbox-container { float: none; width: auto;}
+	.copy-product-roadmap { display: none; }
+	.w-UserTools .application-nav { display: none !important; }	
+	.add-feature-container .button-secondary { padding: 0; }
+}

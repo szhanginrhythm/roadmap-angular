@@ -1,0 +1,512 @@
+@import "palette";
+@import "fonts";
+
+.page-head {
+	background-color: $color-A1;
+    left: 0;
+    padding: 35px 0 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 30;
+}
+
+.page-body {
+	font-family: $custom-font-regular, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.015em;
+}
+
+.product-name {
+	//background: url("imgs/logo_image.png") no-repeat left top;
+    clear: left;
+    display: block;
+    float: left;
+    font-family: $custom-font-bold, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.015em;
+    line-height: 1.5em;
+    padding: 0 0 0 20px;
+	margin: 0 0 0 -10px;
+	color: $color-white;	
+}
+
+.nav .nav-item,
+.nav .nav-node { 
+	display: block; 
+	float: left; 
+}
+
+.nav .nav-node a { 
+	color: $color-C2; 
+	font-family: $custom-font-light, Arial, sans-serif; 
+}
+
+.user_nav {
+    margin-left: 30px;
+}
+
+.nav-item {
+    font-family: $custom-font-bold, Arial,sans-serif;
+    text-decoration: none;
+    margin-top: -10px;
+    margin-left: 1px;
+	a, span {
+		text-decoration: none;
+		padding: 9px 10px;
+		display: block;
+		color:  $color-C3; 
+	}
+	.button {
+		padding: 5px 10px;
+	}
+	input{
+		display: none;
+	}
+}
+
+.title {
+	font-family: $custom-font-bold, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -0.015em;
+    line-height: 1.5em;
+}
+
+.company-title {
+	font-size: 18px;
+	color: $color-white;	
+}
+
+.product-title {
+	font-size: 28px;
+    padding: 0 0 8px;
+	color: $color-A1;
+	float: left;
+}
+
+.page-body-c {
+	padding-top: 60px;
+}
+
+.product-roadmap-container {
+	.header-row {
+		background: $color-C5;
+		padding: 8px 0px;
+		
+		.title {
+			color: $color-C2;
+			font: 14px/16px $custom-font-bold, Arial, sans-serif;
+			text-transform: uppercase;
+			padding-left: 10px;
+		}
+	}
+}
+
+.theme-detail-row {
+	padding-bottom: 5px;
+	border-bottom: 1px solid $color-C3;
+	
+	.title {
+		float: left;
+		color: $color-C2;
+		font: 16px/24px $custom-font-bold, Arial, sans-serif;
+	}
+	
+	.theme-list-container {
+		cursor: default;
+		
+		&:first-child {
+			padding-top: 10px;
+		}
+	}
+	
+	&:last-child  {
+		@extend .last;
+	}
+}
+
+.feature-list-container {
+	@extend .column;
+	@extend .colx2;
+	padding-top: 5px;
+	height: auto !important;
+	
+	.feature-list {
+		.feature-list-item {
+			padding: 8px 10px;
+			color: $color-C2;
+			font: 15px/12px $custom-font-regular, Arial, sans-serif;
+			overflow: hidden;
+			cursor: pointer;
+			position: relative;
+			z-index: 1000;
+			
+			.feature-title {
+				float: left;
+				margin-left: -10px;
+				
+				&:hover {
+					word-wrap: break-word;
+				}
+			}
+			
+			&:first-child {
+				padding-top: 5px;
+			}
+		}
+	}
+}
+
+.add-feature-container {
+	padding: 8px 10px 8px 0px;
+	@extend colx2;
+}
+
+.theme-name-input,
+.feature-name-input,
+.edit-feature-input {
+	/*border: none;*/
+	background: $color-white;
+	font: 12px/24px $custom-font-bold,Arial,sans-serif;
+	color: $color-C1;
+	height: 24px;
+}
+
+.feature-name-input {
+	//margin-left: 5px;
+}
+
+.delete{
+	@include sprite-at-position(2, 5);
+}
+
+.hilight-target {
+	background: $color-C4;
+}
+
+.w-CreateProduct {
+	.product-form-list {
+		margin: 0;
+		text-align: left;
+		margin: 0 20px 0 0;
+	
+		dd {
+			display: inline;
+			float: left;
+			margin: 10px 10px 0;			
+		}
+		
+		.enter-product-title {
+			width: 200px;
+		}
+		
+		.select-project-focus {
+			width: 100px;
+		}
+	}
+	
+	.form-list {
+		.product-name {
+			width: 90%;
+		}
+		
+		.product-name {
+			//@extend .form-input;
+		}
+	}
+	.title {
+		font-size: 28px;
+		padding-bottom: 15px;
+		color: $color-A1;
+		float: left;
+	}
+	.select-product-roadmap {
+		clear: both;
+		padding-bottom: 15px;
+		
+		.schedule-actions {
+			.action {
+				float: left;
+				margin-right: 15px;
+				padding-left: 0px;
+				
+				.button-secondary {
+					font-size: 20px;
+					padding: 15px;
+					@include linear-gradient($color-C3, $color-C4);
+					border-color: $color-C2;
+				}
+			}
+		}
+	}
+	
+	.monthly {
+		//@include border-radius(0px 20px 20px 0px);
+	}
+	
+	.quarterly {
+		//@include border-radius(20px 0px 0px 20px);
+	}
+}
+
+.w-ProductRoadMapDetails {
+	width: 100%;
+	
+	.column {
+		border: 1px solid;
+		margin-left: -1px;
+		text-align: center;
+		width: 200px;
+	}
+	
+	.feature-list,
+	.theme-item {
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		margin-bottom: -1px;
+		height: 125px;
+	}
+	
+	.feature {
+		text-align: left;
+		list-style: none outside none;
+	}
+	
+	.themeRemove {
+		position: absolute;
+		top: 18px;
+		right: 50px;
+	}
+	.themeRemove {
+		text-align: left;
+	}
+}
+
+.error-box {
+	border: 1px solid red;
+	color: red;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.add-theme-actions-container {
+	padding-top: 15px;
+	
+	.actions {
+		.action {
+			float: left;
+			padding-left: 0px;
+			margin-left: 10px;
+			
+			.next,
+			.previous {
+				@extend .button-secondary;
+				text-decoration: none;
+				cursor: pointer;
+				
+				&:hover {
+					color: $color-C2;
+				}
+			}
+		}
+		
+		.floatR {
+			float: right;
+		}
+	}
+}
+
+.message-container {
+	.message {
+		font-family: custom-font-bold, Arial;
+		color: $color-C1;
+		padding: 10px 0px 25px;
+		line-height: 20px;
+	}
+}
+
+.product-roadmap-grid-container {
+	margin-top: 45px;
+	@include linear-gradient($color-C4, $color-D1);
+	@extend .colx10;
+	
+	.product-roadmap-list-heading {
+		color: $color-C1;
+		border-bottom: 1px solid $color-C4;
+		@extend .colx10;
+			
+		.title {
+			padding: 5px 0px;
+			font-size: 14px;
+		}
+		
+		.product-roadmap-name-hdr {
+			span {
+				padding-left: 5px;
+			}
+		}
+	}
+	
+	.product-list-row {
+		border-bottom: 1px solid $color-C3;
+		padding: 10px 0;
+		@extend .colx10;
+		cursor: pointer;
+		@include linear-gradient($color-C3, $color-C4);
+		color: $color-C2;
+		font-weight: bold;
+		
+		&:hover {
+			@include linear-gradient($color-C3, $color-C2);
+			color: $color-C1;
+		}
+		
+		.start-schedule-col,
+		.start-schedule-type,
+		.action-set {
+			padding-top: 5px;			
+		}
+		
+		.start-schedule-col,
+		.start-schedule-type {
+			padding-left: 25px;					
+		}
+		
+		.product-list {
+			.product-link {
+				float: left;
+			}
+		}
+	}
+}
+
+.create-product {
+	padding-top: 11px;
+	padding-bottom: 11px;
+}
+
+
+.back-to-list {
+	@extend .secondary-link;
+	float: right;
+}
+
+.hdr-link {
+	color: white;
+    font-family: $custom-font-bold, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+    text-decoration: none;
+}
+
+.message-container h3 {
+	font-family: $custom-font-regular, Arial, sans-serif;
+	color: $color-A1;
+	font-weight: bold;
+}
+
+#copy-product-name {
+	border: 1px solid #D9D9D9;
+    color: #8B8B8B;
+    font-size: 20px;
+    font-weight: normal;
+    width: 99%;
+}
+
+.print-product-roadmap{
+	float: left;
+	padding: 15px 10px 0;	
+	display: none;
+
+	a {
+		font-size: 12px;
+		@extend .secondary-link;
+	}
+}
+
+.w-ProductRoadMapName {
+	padding-top: 5px;
+}
+
+.w-createProductRoadmap {
+	clear: both;
+	
+	.enter-product-name {
+		@include box-shadow-border-left-end;
+		width: 65%;
+		float: left;
+		margin-right: 5px;
+	}
+	
+	.select-schedule-type {
+		@include box-shadow-border-right-end;
+		width: 28%;
+		float: left;
+		border-left: none; 
+		color: $color-C2;
+		padding-top: 7px;
+		float: left;
+		background-color: $color-white;
+		
+		.ui-selectmenu {
+			width: 125px !important;
+			background: $color-white;			
+		}
+	}
+	
+	.product-name-input {
+		background-color: $color-white;
+		border: medium none;
+		font-family: $custom-font-regular, $font-regular;
+		font-weight: normal;
+		padding: 9px 10px;
+		width: 98%;
+	}
+	
+	.create-product-controls {
+		.control {
+			float: left;
+			margin-right: 10px;
+		}
+		
+		.cancel-product {
+			padding: 11px;
+		}
+	}
+	
+	/* saf3+, chrome1+ */
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.product-name-input  { 
+			padding: 7px 10px; 
+		}
+	}
+}
+
+.product-roadmap-details-container {
+	.schedule-container {
+		.header-row {
+			.contents {
+				@extend .column;
+				@extend .colx9;
+			}
+			.title {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.monthly-schedule-container {
+	width: 1152px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.gradient-bg {
+	@include linear-gradient($color-C3, $color-C4);
+}

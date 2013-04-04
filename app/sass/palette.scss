@@ -1,0 +1,59 @@
+/***
+ Palette Color levels
+***/
+
+$color-A1: #F4921F;
+$color-A2: #e28e2d;
+$color-A3: #edba7f;
+$color-A4: #f6dcbf;
+
+$color-B1: #f5efcd;
+$color-B2: #fef9de;
+$color-B3: #fefbe9;
+$color-B4: #fefdf4;
+
+$color-C1: #424242;
+$color-C2: #8b8b8b;
+$color-C3: #d9d9d9;
+$color-C4: #ededed;
+$color-C5: #f0f0f0;
+
+$color-D1: #48aad5;
+$color-D2: #fb8f8c;
+$color-D3: #7eb845;
+$color-D4: #9FCC72;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+
+/***
+ Palette Color levels
+***/
+
+//Main
+$main-login-page-bkgd-color: $color-B4;
+
+$main-page-bkgd-color: $color-C4;
+$main-pageheader-bkgd-color: $color-A1;
+$main-pagepanel-bkgd-color: $color-white;
+$main-pagecontent-bkgd-color: $color-white;
+$main-pagefooter-bkgd-color: $color-white;
+$footer-text-color: $color-C2;
+
+//Primary
+$primary-button-bkgd-color1: $color-A1;
+$primary-button-bkgd-color2: $color-A2;
+$primary-button-text-color: $color-white;
+
+//Secondary
+$secondary-button-bkgd-color1: $color-C5;
+$secondary-button-bkgd-color2: $color-C3;
+$secondary-button-text-color: $color-C2;
+
+//Tertiary
+$tertiary-button-bkgd-color1: $color-C4;
+$tertiary-button-bkgd-color2: $color-C1;
+$tertiary-button-text-color: $color-white;
+
+

@@ -1,0 +1,443 @@
+/***
+ Charter widgets
+**/
+
+.w-CharterList {
+	
+	.edit-options{
+		display: none;
+	}
+	.charter_link {
+		font-family: $custom-font-bold, Arial, sans-serif; 
+		font-size: 18px;
+		@extend .primary-link;
+	}
+	.product-name,
+	.inline-editor {
+		font-family: $custom-font-bold, Arial, sans-serif; 
+		font-size: 18px;
+	}
+	.product-name {
+		display: none;
+	}
+	.inline-editor-container {
+		display: inline;
+	}
+	.access_charter:hover {
+		color: $color-C2;
+	}
+
+	.charter-row {
+		@extend .border-line-above;
+	}
+
+	.charter-row-c {
+		@extend .border-line-below;
+		@extend .stack;
+		padding: 8px 0;
+		position: relative;
+	}
+	
+	.list-charter-name {
+		padding-right: $unit;
+		padding-bottom: $unit;
+	}
+
+	.charter-summary-info {
+		margin-top: 5px;
+		float: right;
+		font-family: $custom-font-regular;
+		color: $color-C2;
+	}
+
+	.w-CharterName {
+		.edit-options {
+			display: block;
+		}
+	}
+
+	.your-role {
+		padding: 2px 5px;
+	}
+
+	.is_a_viewer {
+		.charter-summary-info {
+			.your-role {
+				background: $color-C3;
+				color: $color-white;
+			}
+		}
+	}
+
+	.is_an_editor {
+		.charter-summary-info {
+			.your-role {
+				background: $color-A4;
+				color: $color-C1;
+			}
+		}
+	}
+
+	.is_an_owner {
+		.charter-summary-info {
+			.your-role {
+				background: $color-D4;
+				color: $color-white;
+			}
+		}
+	}
+
+	.is_an_admin {
+		.charter-summary-info {
+			.your-role {
+				background: $color-C4;
+				color: $color-C1;
+			}
+		}
+	}
+}
+
+.w-ActionSet {
+	z-index: 10;
+	float: left;
+	margin-right: 0;
+	margin-left: 5px;
+	width: 65px;
+		
+	.icon {
+		float: left;
+		height: 18px;
+		width: 20px;
+		text-indent: -999999px;
+	}
+	
+	.options-label {
+		@extend .button-secondary;
+		display: block;
+		float: left;
+		width: 40px;
+		margin-right: 8px;
+		.icon {
+			@include sprite-at-position(1, 7);
+			float: left;
+		}
+		.title {
+			@include sprite-at-position(1, 5);
+			float: left;
+			height: 15px;
+			width: 20px;
+			text-indent: -999999px;
+		}
+	}
+	.w-options {
+		display: none;
+		position: relative;
+		
+		.options-item {
+			a {
+				@extend .button-secondary;
+				display: block;
+				width: 120px;
+			}
+		}
+		.rename-product-roadmap .icon {
+			@include sprite-at-position(1, 1);
+			&:hover {
+				.icon{
+					@include sprite-at-position(1, 1);
+				}
+			}
+		}
+		.copy-product-roadmap .icon {
+			@include sprite-at-position(1, 2);
+			&:hover {
+				.icon{
+					@include sprite-at-position(1, 2);
+				}
+			}
+		}
+		.delete-product-roadmap .icon {
+			@include sprite-at-position(1, 4);
+			&:hover {
+				.icon{
+					@include sprite-at-position(1, 4);
+				}
+			}
+		}
+	}
+}
+
+.name-actions {
+	display: none;
+	.button {
+		font-size: 11px;
+		padding: 1px 5px;
+		border: none;
+		text-transform: lowercase;
+	}
+}
+
+.options-selected {
+	.options-label {
+		background: $color-C1 !important;
+		color: $color-white;
+
+		.icon{
+			@include sprite-at-position(0, 7);
+		}
+		.title {
+			@include sprite-at-position(0, 5);
+		}
+	}
+	.w-options {
+		display: block;
+		position: absolute;
+		margin-top: 30px;
+		z-index: 2;	
+		
+		.options-item a {
+			background: $color-C1;
+			color: $color-white;
+			
+			&:hover {
+				background: $color-A1 !important;
+			}
+			
+			margin-bottom: 2px;
+		}
+		.rename-product-roadmap .icon {
+			@include sprite-at-position(0, 1);
+		}
+		.copy-product-roadmap .icon {
+			@include sprite-at-position(0, 2);
+		}
+		.delete-product-roadmap .icon {
+			@include sprite-at-position(0, 4);
+		}
+	}
+}
+
+.w-CharterOptionSet {
+	position: relative;
+	float: right;
+	.w-options {
+		@extend .stack;
+		display: block !important;
+		.options-item {
+			a {
+				@extend .button-secondary;
+			}
+			display: block;
+			float: left;
+			padding-left: 4px;
+		}
+	}
+}
+
+.w-DeleteCharterPrompt {
+	p { 
+		padding: 15px;
+	}
+	em,
+	.deleting-charter-name {
+		font-style: normal;
+		font-weight: bold;
+	}
+}
+
+.w-ExportOptions {
+	.w-body-c {
+		padding: 5px 10px 5px 5px;
+	}
+	.button {
+		width: 65px;
+		height: 80px;
+		text-indent: 999999px;
+		display: block;
+		float: right;
+		margin-right: 23px;
+	}
+	.button-download-word {
+		background: url("imgs/icon_doc_word.png") no-repeat center;
+	}
+	.button-download-pdf {
+		background: url("imgs/icon_doc_pdf.png") no-repeat center;
+	}
+}
+
+.w-CopyCharter {
+	font-family: $custom-font-regular,Arial,sans-serif;
+	.w-body-c {
+		padding-left: 0;
+	}
+	input {
+		border: 1px solid $color-C3;
+		padding: 4px;
+		color: $color-C2;
+		font-size: 20px;
+		font-weight: normal;
+		margin-bottom: 8px;
+		padding: 4px;
+	}
+}
+
+.w-CharteringSlide {
+	.slideviewer{
+		height: 618px;
+	}
+	.slide-business_state_alignment {
+		background: url("imgs/slides/market_charter.001.jpg") no-repeat center;
+	}
+	.slide-industry_immersion {
+		background: url("imgs/slides/market_charter.002.jpg") no-repeat center;
+	}
+	.slide-customer_discovery {
+		background: url("imgs/slides/market_charter.003.jpg") no-repeat center;
+	}
+	.slide-competition_deep_diving {
+		background: url("imgs/slides/market_charter.004.jpg") no-repeat center;
+	}
+	.slide-unique_positioning {
+		background: url("imgs/slides/market_charter.005.jpg") no-repeat center;
+	}
+	.slide-business_model {
+		background: url("imgs/slides/market_charter.006.jpg") no-repeat center;
+	}
+	.slide-dashboarding {
+		background: url("imgs/slides/market_charter.007.jpg") no-repeat center;
+	}
+	.slide-customer_advisory_boarding {
+		background: url("imgs/slides/market_charter.008.jpg") no-repeat center;
+	}
+}
+
+.charter-action-set {
+	.w-options {
+		display: none;
+	}
+	
+}
+
+#charter-export-details {
+	background: $color-white;
+	font-family: arial;
+	position: relative;
+	left: -20px;
+	top: 0;
+
+	h2 {
+		font-size: 26px;
+		margin-left: 20px;
+		font-weight: normal;
+		line-height: 3em;
+		color: $color-A1;
+	}
+	padding: 40px 0;
+	table {
+		width: 100% !important;
+	}
+}
+
+#s-CharterDashboard {
+	#NewTask_panel {
+		display: block !important;
+	}
+}
+
+//
+// modifiers
+//
+
+.page-subhead {
+	.w-CharterName {
+		.actions {
+			position: absolute;
+			bottom: -24px;
+			left: 0;
+		}
+		.inline-edit,
+		.inline-editor {
+			background: $color-B1;
+			font-size: 28px;
+			color: $color-C1;
+		}
+		.product-name,
+		.inline-editor {
+		}
+	}
+}
+
+.on-hover {
+	.w-CharterToolsNav {
+		.charter-delete,
+		.charter-export-options,
+		.charter-actions {
+			display: inherit;
+		}
+	}
+	.w-CharterName {
+		.edit-options {
+			display: block;
+			position: absolute;
+			bottom: -25px;
+			left: 0;
+		}
+	}
+	.charter-row-c {
+		.w-CharterName {
+			.edit-options {
+				position: static;
+			}
+		}
+	}
+}
+
+.is_an_editor {
+	.participate_on_charter,
+	.delete_charter,
+	.share-charter {
+		display: none !important;
+	}
+}
+
+.is_an_editor,
+.is_a_viewer {
+	.rename-action {
+		display: none !important;
+	}
+}
+
+.is_a_viewer {
+	.w-CharterViewSwitch,
+	.add-row-container,
+	.remove-row-container {
+		display: none !important;
+	}
+	.participate_on_charter,
+	.copy-charter,
+	.delete_charter,
+	.share-charter {
+		display: none !important;
+	}
+	ol.level2_section1,
+	#sections .item_level3,
+	#sections .level3_item9_section1 .level3 .subhead  {
+		display: none !important;
+	}
+	#sections {
+		padding-top: 0;
+	}
+	#sections .level3_item9_section1,
+	#sections .level3_item9_section1 .level3 {
+		display: block !important;
+	}
+}
+
+.is_an_admin .charter-row {
+	.rename-action,
+	.copy-charter,
+	.delete_charter,
+	.share-charter {
+		display: block !important;
+	}
+}

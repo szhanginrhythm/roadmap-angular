@@ -1,0 +1,20 @@
+@media print {
+	.page-head-c, .page-body-c, .page-foot-c { width: 100%; }
+	.colx1 { width: 8%;}
+	.colx2 { width: 16%;}
+	.colx3 { width: 24%;}
+	.colx4 { width: 32%;}
+	.colx5 { width: 40%;}
+	.colx6 { width: 48%;}
+	.colx7 { width: 56%;}
+	.colx8 { width: 64%;}
+	.colx9 { width: 72%;}
+	.colx10 { width: 80%;}
+	.colx11 { width: 88%;}	
+	.colfull { width: 96%;}	
+	
+	.product-details-container .colx2 { width: 20%; }
+	.product-details-container .colx6 { width: 44%; }
+	.w-UserTools, .w-CreateProduct, .copy-product-roadmap, .add-theme-actions-container, .add-feature-container, .print-product-roadmap, .controls .close-control, .controls .remove-control, .w-ActionSet { display: none; }
+	.product-list-row { width: 100%; }
+}

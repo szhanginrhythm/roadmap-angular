@@ -1,0 +1,18 @@
+#slider,
+.slider1 {
+	height: auto;
+	overflow: hidden;
+	
+	li {
+		@extend .column;
+		@extend .colx2;
+		list-style: none;
+		overflow: hidden;
+	}
+}
+
+.slider1 {
+	.add-feature-container {
+		padding-top: 15px;
+	}
+}

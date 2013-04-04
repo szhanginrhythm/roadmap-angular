@@ -1,0 +1,343 @@
+$unit: 8px;
+
+$gutter: $unit * 2;
+
+$column_unit_count: 10;
+
+$column: $unit * $column_unit_count;
+
+$column_max: 12;
+
+$page-margin-top: $unit * 2;
+
+$page-margin-bottom: $unit * 4;
+
+$page-margin-left: $unit * 2;
+
+$page-margin-right: $unit * 2;
+
+@mixin unit-width($x: 1) {
+  width: $x * $unit; }
+
+@mixin column-width($x: 1, $y: 0) {
+  width: $x * $column + $gutter * $x - $gutter + $y; }
+
+@mixin column-height($x: 1, $y: 0) {
+  height: $x * $column + $gutter * $x - $gutter + $y; }
+
+@mixin page-inner-width {
+  @include column-width($column_max); }
+
+@mixin page-full-width {
+  @include column-width($column_max, $page-margin-left + $page-margin-right); 
+}
+
+.page-box {
+  padding-bottom: $page-margin-bottom; }
+
+.page-head {
+  padding-top: $page-margin-top; }
+
+.page-head-c, .page-body-c, .page-foot-c {
+  @include page-inner-width;
+  margin: 0 auto; }
+
+.page-body:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.column {
+  float: left;
+  display: block; }
+
+.colc {
+	float: left;
+	width: 100%;
+}
+
+.last {
+  margin-right: 0 !important; }
+
+.tier {
+  margin-bottom: $gutter; }
+
+@mixin width-colx($x: 1) {
+  @include column-width($x);
+  margin-right: $gutter; }
+
+.colx1 {
+  @include width-colx(1); }
+
+.colx2 {
+  @include width-colx(2); }
+
+.colx3 {
+  @include width-colx(3); }
+
+.colx4 {
+  @include width-colx(4); }
+
+.colx5 {
+  @include width-colx(5); }
+
+.colx6 {
+  @include width-colx(6); }
+
+.colx7 {
+  @include width-colx(7); }
+
+.colx8 {
+  @include width-colx(8); }
+
+.colx9 {
+  @include width-colx(9); }
+
+.colx10 {
+  @include width-colx(10); }
+
+.colx11 {
+  @include width-colx(11); }
+
+.colfull {
+  @include column-width($column_max);
+  overflow: hidden; }
+
+//.fullpage {
+//  width: $page-content-width; }
+
+.h-fullpage {
+  @include column-height($column_max); }
+
+@mixin width-colxp($x: 1) {
+  @include column-width($x, $gutter);
+  padding-right: $gutter; }
+
+.colx1p {
+  @include width-colxp(1); }
+
+.colx2p {
+  @include width-colxp(2); }
+
+.colx3p {
+  @include width-colxp(3); }
+
+.colx4p {
+  @include width-colxp(4); }
+
+.colx5p {
+  @include width-colxp(5); }
+
+.colx6p {
+  @include width-colxp(6); }
+
+.colx7p {
+  @include width-colxp(7); }
+
+.colx8p {
+  @include column-width(8);
+  overflow: hidden; }
+
+.colx9 .full_nopad {
+  @include column-width(9); }
+
+.colx8 .full_nopad {
+  @include column-width(8); }
+
+.colx7 .full_nopad {
+  @include column-width(7); }
+
+.colx6 .full_nopad {
+  @include column-width(6); }
+
+.colx5 .full_nopad {
+  @include column-width(5); }
+
+.colx4 .full_nopad {
+  @include column-width(4); }
+
+.colx3 .full_nopad {
+  @include column-width(3); }
+
+.colx2 .full_nopad {
+  @include column-width(2); }
+
+.colx1 .full_nopad {
+  @include column-width(1); }
+
+@mixin margin-left-colx($x: 1) {
+  margin-left: $x * $column + $gutter * $x; }
+
+@mixin margin-right-colx($x: 1) {
+  margin-right: $x * $column + $gutter * $x; }
+
+@mixin margin-left-x($x: 1) {
+  margin-left: $x * $unit; }
+
+@mixin margin-right-x($x: 1) {
+  margin-right: $x * $unit; }
+
+.full {
+  width: 99.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.half, .two-schedules, .three-sixth, .four-eighths, .five-tenths {
+  width: 49.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.third, .two-sixths, .three-ninths {
+  width: 33.33%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.two-thirds, .four-sixths, .six-tenths {
+  width: 66.66%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.schedule, .two-eighths {
+  width: 24.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.three-schedules, .six-eighths {
+  width: 74.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.fifth, .two-tenths {
+  width: 19.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.two-fifths, .four-tenths {
+  width: 39.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.three-fifths, .six-tenths {
+  width: 59.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.four-fifths, .eight-tenths {
+  width: 79.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.sixth {
+  width: 16.65%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.five-sixths {
+  width: 83.33%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.seventh {
+  width: 14.28%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.two-sevenths {
+  width: 28.57%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.three-sevenths {
+  width: 42.85%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.four-sevenths {
+  width: 57.14%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.five-sevenths {
+  width: 71.42%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.six-sevenths {
+  width: 85.71%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.eighth {
+  width: 12.45%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.three-eighths {
+  width: 37.45%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.five-eighths {
+  width: 62.45%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.seven-eighths {
+  width: 87.45%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.ninth {
+  width: 11.11%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.two-ninths {
+  width: 22.22%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.four-ninths {
+  width: 44.44%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.five-ninths {
+  width: 55.55%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.seven-ninths {
+  width: 77.77%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.eight-ninths {
+  width: 85.71%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.tenth {
+  width: 9.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.three-tenths {
+  width: 29.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.seven-tenths {
+  width: 69.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.nine-tenths {
+  width: 89.95%;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+@mixin sprite-at-position($left: 1, $down: 1) {
+	background: url("../images/sprite_icons.png") $left * -20px $down * -20px no-repeat; }

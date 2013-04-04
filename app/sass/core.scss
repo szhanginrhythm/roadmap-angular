@@ -1,0 +1,291 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; 
+}
+
+body {
+  line-height: 1; 
+}
+
+ol, ul {
+  list-style: none; 
+}
+
+blockquote, q {
+  quotes: none; 
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none; 
+}
+
+a {
+  outline: 0; 
+}
+
+:focus {
+  outline: 0; 
+}
+
+ins {
+  text-decoration: none; 
+}
+
+del {
+  text-decoration: line-through; 
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; 
+}
+
+.wrapword{
+	word-wrap: break-word;
+}
+  
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; 
+}
+
+.clearfix {
+  display: inline-block; 
+}
+
+html[xmlns] .clearfix {
+  display: block; 
+}
+
+* html .clearfix {
+  height: 1%; 
+}
+
+.center {
+  text-align: center; 
+}
+
+.constrain-x {
+  overflow-x: auto;
+  overflow-y: hidden; 
+}
+
+.constrain-y {
+  overflow-y: auto;
+  overflow-x: hidden; 
+}
+
+.tier {
+  display: block !important;
+  clear: both !important;
+  margin-bottom: 5px;
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; 
+  } 
+}
+
+.stack {
+  display: block !important;
+  clear: both !important;
+  zoom: 1;
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0 !important;
+    height: 0; 
+  } 
+}
+
+.box-fix {
+  display: block;
+  clear: both;
+  zoom: 1;
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; 
+  } 
+}
+
+/*.column {
+  float: left;
+  display: inline;
+  zoom: 1;
+  position: relative; 
+}
+
+.column:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; 
+}*/
+
+.column-empty {
+  padding: 0;
+  margin: 0 0 1px 0;
+  line-height: 0; 
+}
+
+.align-lt {
+  float: left !important; 
+}
+
+.align-rt {
+  float: right !important; 
+}
+
+.text-lt {
+  text-align: left; 
+}
+
+.text-rt {
+  text-align: right; 
+  .button {
+	float: right;
+  }
+}
+
+.inline {
+  display: inline; 
+}
+
+.last {
+  margin-right: 0 !important; 
+}
+
+ul.horiz li, ol.horiz li, dl.horiz dt, dl.horiz dd {
+  display: inline; 
+}
+
+ul.horiz-float li, dl.horiz-float dt, dl.horiz-float dd {
+  float: left; 
+}
+
+body {}
+
+.page-box {
+  text-align: left;
+  margin: 0 auto; 
+}
+
+.page-head, .page-body, .page-foot {
+  text-align: left;
+  //margin: 0 auto;
+  display: block !important;
+  clear: both !important;
+  zoom: 1; 
+}
+
+.page-box:after, .page-head:after, .page-body:after, .page-foot:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; 
+}
+
+.w-box {}
+
+.w-box:after {
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.w-head {
+  clear: both;
+  display: block;
+  zoom: 1; 
+}
+
+.w-head-c {
+  zoom: 1;
+  text-indent: 1px; 
+}
+
+.w-body-c {
+  margin: 0;
+  zoom: 1; 
+}
+
+.w-body-c p.end {
+  margin-bottom: 0; 
+}
+
+.w-foot {
+  overflow: hidden;
+  zoom: 1; 
+}
+
+.w-foot-c {
+  zoom: 1; 
+}
+
+.w-box:after, .w-head:after, .w-head-c:after, .w-body:after, .w-body-c:after, .w-foot:after, .w-foot-c:after {
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden; 
+}
+
+br.w-foot {
+  margin-bottom: -1px;
+  line-height: 0; 
+}
+
+.w-head-empty, .w-foot-empty {
+  display: none; 
+}
+
+.c-head {
+  clear: both;
+}
+
+.c-head:after {
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden; 
+}
+
+.c-foot {
+  clear: both;
+  overflow: hidden; 
+}
+
+br.c-foot {
+  height: 0;
+  margin-bottom: -1px;
+  clear: both;
+  line-height: 0;
+  margin: 0; 
+}

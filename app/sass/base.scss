@@ -1,0 +1,988 @@
+@import "palette";
+@import "grid";
+@import "fonts";
+$pie_htc_location: "css/css-pie/PIE.htc";
+
+
+@mixin transparent($percent: 50) {
+	filter: alpha(opacity = $percent);
+	-moz-opacity: $percent / 100;
+	-khtml-opacity: $percent / 100;
+	opacity: $percent / 100; 
+}
+
+@mixin _border-radius($radius: 0) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;	
+}
+
+@mixin border-radius($radius: $unit) {
+	/* @include _border-radius($radius);
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom:1;
+	top:0;
+	left:0; */ 
+} 
+
+@mixin border-radius($radius: $unit) {
+	border: 1px solid;
+	@include _border-radius($radius);
+	behavior: url($pie_htc_location);
+	position: relative;
+	z-Index: 0;
+}
+
+@mixin border-radius-extended($set1: 0, $set2: 0, $set3: 0, $set4: 0) {
+	-webkit-border-radius: $set1 $set2 $set3 $set4;
+	-moz-border-radius: $set1 $set2 $set3 $set4;
+	border-radius: $set1 $set2 $set3 $set4;
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom:1;
+	top:0;
+	left:0;
+}
+
+@mixin _box-shadow($shadow: 0) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin box-shadow($shadow: 0) {
+	@include _box-shadow($shadow);
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom: 1;
+	top:0;
+	left:0;
+}
+
+@mixin _box-shadow-updated($swidth: 4px, $scolor: $color-C4) {
+	-webkit-box-shadow: 0 0 0 $swidth $scolor;
+	-moz-box-shadow: 0 0 0 $swidth $scolor;
+	box-shadow: 0 0 0 $swidth $scolor;
+}
+
+@mixin _box-shadow-extended($set1: 0, $set2: 0, $set3: 0, $set4: 0) {
+	-webkit-box-shadow: $set1, $set2, $set3, $set4;
+	-moz-box-shadow: $set1, $set2, $set3, $set4;
+	box-shadow: $set1, $set2, $set3, $set4;
+}
+
+@mixin _box-shadow-extended2($set1: 0, $set2: 0, $set3: 0, $set4: 0, $set5: 0, $set6: 0) {
+	-webkit-box-shadow: $set1, $set2, $set3, $set4, $set5, $set4;
+	-moz-box-shadow: $set1, $set2, $set3, $set4, $set5, $set6;
+	box-shadow: $set1, $set2, $set3, $set4, $set5, $set6;
+}
+
+@mixin box-shadow-extended($set1: 0, $set2: 0, $set3: 0, $set4: 0) {
+	@include _box-shadow-extended($set1, $set2, $set3, $set4);
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom: 1;
+	top:0;
+	left:0;
+}
+
+@mixin box-border-clear {
+	@include _border-radius(0);
+	behavior: url($pie_htc_location);
+}
+
+@mixin box-shadow-clear {
+	@include _box-shadow-updated(0);
+}
+
+@mixin box-shadow-border {
+	@include _border-radius($unit);
+	@include _box-shadow-extended(-3px -3px 0 $color-C4, 2px -2px 0 $color-C4, 0 2px 0 $color-C4, 1px 1px 0 $color-C4);
+	position: relative; 
+	zoom: 1;
+	top:0;
+	left:0;
+	behavior: url($pie_htc_location);
+}
+
+@mixin box-shadow-border-left-end {
+	border: 1px solid $color-C4;
+	@include _border-radius($unit 0 0 $unit);
+	@include _box-shadow-updated(4px, $color-C4);
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom: 1;
+	top:0;
+	left:0;
+}
+
+@mixin box-shadow-border-middle {
+	border: 1px solid $color-C4;
+	@include _border-radius(0);
+	@include _box-shadow-extended(0 4px 0 $color-C4, 0 -4px 0 $color-C4, 0 4px 0 $color-C4, 0 -4px 0 $color-C4);
+	border-left: none;
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom: 1;
+	top:0;
+	left:0;
+}
+
+@mixin box-shadow-border-right-end {
+	border: 1px solid $color-C4;
+	@include _border-radius(0 $unit $unit 0);
+	@include _box-shadow-updated(4px, $color-C4);
+	behavior: url($pie_htc_location);
+	position: relative;
+	zoom: 1;
+	top:0;
+	left:0;
+	border-left: none; 
+}
+
+@mixin _linear-gradient($top: 0, $bottom: 0) {
+	background: $top;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from($top), to($bottom));
+	background: -moz-linear-gradient($top, $bottom);
+	background: linear-gradient($top, $bottom);
+	-pie-background: linear-gradient($top, $bottom);
+}
+
+@mixin linear-gradient($top: 0, $bottom: 0) {
+	@include _linear-gradient($top, $bottom);
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom:1;
+	top: 0;
+	left: 0;
+}
+
+@mixin drop-down-shadow-border {
+	border: 1px solid $color-C3;
+	@include _border-radius(0 0 10px 10px);
+	@include _box-shadow-extended(-2px 2px 0 $color-C4, 0 2px 0 $color-C4, 2px 2px 1px $color-C4, 2px 0 0 $color-C4);
+	//@include _linear-gradient($color-white, $color-C4);
+	behavior: url($pie_htc_location);
+	position: relative; 
+	zoom: 1;
+	top:0;
+	left:0;
+}
+
+@mixin rounded-shadow-box($padding: 2px, $background: $color-white, $border-radius: $unit, $border-color:$color-C3, $shadow-color:$color-C4, $shadow-border: 4px) {
+	border: 1px solid $border-color;
+	@include _border-radius($border-radius);
+	@include _box-shadow-updated($shadow-border, $shadow-color);
+	behavior: url($pie_htc_location);
+	background: $background;
+	position: relative;
+	zoom:1;
+	top:0;
+	left:0;
+	padding: $padding; 
+}
+
+@mixin rounded-shadow-box-error($padding: 2px, $background: $color-white) {
+	@include rounded-shadow-box($padding, $background);
+	zoom: 1;
+	border: 1px solid $color-C1; 
+}
+
+@mixin rounded-button($padding: 2px, $border-radius: 2px) {
+	border: 1px solid $color-C4;
+	@include _border-radius($border-radius);
+	background: $color-white;
+	position: relative;
+	zoom:1;
+	top:0;
+	left:0;
+	padding: $padding 8px; 
+	behavior: url($pie_htc_location);
+}
+
+@mixin shadow-box($border: 2px, $padding: $unit, $radius: 0) {
+	border: none;
+	@include _border-radius($radius);
+	@include _box-shadow($color-C3 3px 3px 6px);
+	behavior: url($pie_htc_location);
+	background: $color-white;
+	position: relative;
+	zoom:1;
+	top:0;
+	left:0;
+	padding: $padding; 
+}
+
+@mixin button-bkgd($theme: primary) {
+	background: url(/Content/images/button-#{$theme}.gif) repeat-x bottom left;	
+}
+
+@mixin control-button {
+    display: block;
+    height: $unit * 2;
+    width: $unit * 2;
+    float: left;
+    overflow: hidden;
+	text-indent: 99999px;
+	cursor: pointer;
+	
+    span {
+		display: block;
+		height: 0;
+		width: 0;
+		overflow: hidden; 
+	}	
+}
+
+.w-box {
+	margin-bottom: $unit;
+}
+
+.w-head {
+	padding-top: $unit;
+	padding-bottom: $unit;
+}
+
+.w-head-c, .w-body-c {
+	padding-left: $unit;
+	padding-right: $unit; 
+}
+
+.w-foot {
+	padding-top: $unit;
+	padding-bottom: $unit; 
+}
+
+.w-foot-c {
+	padding-left: $unit;
+	padding-right: $unit; 
+}
+
+.controls {
+	.control {
+		display: block;
+		margin-left: 3px; 
+	}
+
+	.close-control,
+	.remove-control {
+		@include control-button;
+		@include sprite-at-position(1, 4);
+	} 
+
+	.edit-control {
+		@include control-button;
+		@include sprite-at-position(1, 1);
+	}
+}
+
+.actions {
+	text-align: right;
+	display: block;
+	padding-right: $unit;
+	clear: both;
+	zoom: 1;
+
+	.action {
+		float: right;
+		padding-left: 5px;
+		position: relative;
+
+		a {
+			display: block; 
+		} 
+	} 
+}
+
+.w-head h3 {
+	color: $color-A1; 
+}
+
+.nav .nav-item {
+	display: inline; 
+}
+
+#page-error-box {
+	@extend .box-fix;
+	display: none;
+	padding: 20px 20px 20px 45px;
+	background: $color-C4;
+	@include border-radius($unit);
+	border: 1px solid $color-C1;
+	font-size: 14px;
+	color: $color-C1;
+	font-weight: bold;
+
+	.icon {
+		@include sprite-at-position(1, 9);
+		width: 4 * $unit;
+		height: 4 * $unit;
+		position: absolute;
+		top: 15px;
+		left: 15px; 
+	} 
+}
+
+.wrap-form-input {
+	@include rounded-shadow-box(4px 10px 4px, $border-radius: 5px); 
+}
+
+.wrap-form-input-error {
+	@include rounded-shadow-box-error(4px 10px 4px); 
+}
+
+.button-hilite {
+	font: 20px/28px "TypewriterFSBold", Arial, sans-serif;
+	font-weight: normal;
+	color: $color-white;
+	text-decoration: none;
+	display: block;
+	float: left;
+	@include rounded-button(6px 12px);
+	//  @include button-bkgd(hilite);
+	@include linear-gradient($color-C2, $color-C1); 
+	z-index: 1;
+}
+
+a.button-hilite {
+	@include rounded-button(10px 12px);
+	// @include button-bkgd(hilite);
+	@include linear-gradient($color-C2, $color-C1); 
+}
+
+.button-primary {
+	@include rounded-button(5px, 5px);
+	background: repeat scroll 0 0 $primary-button-bkgd-color1;
+	cursor: pointer;
+	color: $primary-button-text-color;
+	font: 12px/16px $custom-font-bold, Arial, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 0;
+	
+	&:hover {
+		background: $primary-button-bkgd-color2;
+	}
+}
+
+.button-secondary {
+	@include rounded-button(5px, 5px);
+	background: repeat scroll 0 0 $secondary-button-bkgd-color1;
+	cursor: pointer;
+	color: $secondary-button-text-color;
+	font: 12px/16px $custom-font-bold,Arial,sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 0;
+	
+	&:hover {
+		background: $secondary-button-bkgd-color2;
+	}	
+}
+
+.button-tertiary {
+	font: 14px/16px $custom-font-regular, Arial, sans-serif;
+	font-weight: normal;
+	color: $tertiary-button-text-color;
+	text-decoration: none;
+	@include rounded-button(2px 8px);
+	background-color: $tertiary-button-bkgd-color1; 
+	border: 1px solid $color-C3; 
+}
+
+a.button-tertiary {
+	@include rounded-button(2px 8px 3px);
+	&:hover {
+		background: $color-C3;	 
+	}
+	@include linear-gradient($tertiary-button-bkgd-color1, $tertiary-button-bkgd-color2);
+	line-height: 17px;
+}
+
+$form-font-size: 14px;
+$inline-input-height: 28px;
+
+.form-element-whiteout {
+	border: none;
+	background: $color-white;
+	padding: 4px;
+	font-size: 12px;
+	color: $color-C1; 
+}
+
+.form-field-header {
+	font: bold 13px/15px arial, sans-serif;
+	color: $color-C2; 
+}
+
+.ui-template {
+	display: none; 
+}
+
+.group-list {
+	@extend .box-fix;
+	@extend .wrap-form-input;
+	padding: $unit;
+
+	.list-item {
+		font-weight: normal; 
+	}
+	.list-item-header .summary {
+		font-weight: bold; 
+	} 
+}
+
+.form-list {
+	position: relative;
+	@extend .box-fix;
+	clear: none;
+	
+	dt {
+		@extend .form-field-header;
+		margin-bottom: $unit; 
+	}
+	
+	dd {
+		font-weight: bold;
+		margin-bottom: $unit; 
+	} 
+}
+
+.input-required {
+	font-style: normal;
+	font-weight: bold;
+	color: $color-C1;
+	font-size: 18px;
+}
+
+label.error {
+	color: $color-C1;
+	padding: 5px;
+	display: block;
+	font-weight: bold; 
+}
+
+.file-upload {
+	float: left;
+	position: relative;
+	.button {
+		float:none;
+		margin:0 0 -25px;
+		text-align:center;
+		z-index:0;
+	}
+
+	.upload-photo-small {
+		height: 20px;
+		overflow: hidden;
+		width: 60px;
+	}
+
+	object {
+		position: relative;
+		z-index: 10;
+	}
+}
+
+dd.error {
+	@extend .wrap-form-input-error;
+	border-width: 1px !important; 
+}
+
+.form-input, .form-textarea, .form-select, .form-datepicker, .form-timepicker {
+	@extend .wrap-form-input; 
+}
+
+.form-input {
+	display: block;
+	position: relative;
+	
+	.text {
+		width: 98%;
+		@extend .form-element-whiteout;
+		font-size: $form-font-size; 
+	} 
+}
+
+.form-textarea {
+	display: block;
+
+	.textarea {
+		@extend .form-element-whiteout;
+		width: 100%;
+		height: $unit * 10;
+		font-size: $form-font-size + 0.1; 
+	} 
+}
+
+.form-list {
+	display: block;
+
+	.select,
+	.ajax-select {
+		@extend .form-element-whiteout;
+		padding: 0;
+		width: 100%;
+		font-size: $form-font-size; 
+	} 
+}
+
+.form-list dd .placeholder {
+	color: $color-C3; 
+}
+
+.form-select {
+	padding: 5px 0 !important; 
+	
+	select {
+		visibility: hidden;
+	}
+	
+	label.error {
+		padding: 5px 10px;
+	}
+}
+
+
+.group-list dl.form-list dd {
+	margin-bottom: 20px; 
+}
+
+.ui-tabs-hide {
+	position: absolute; 
+	top: -999999px;
+	left: 0;
+}
+
+.tab-hidden {
+	display: none;
+}
+
+.ui-widget-content {
+	border: none; 
+}
+
+.form-datepicker {
+	width: $unit * 10;
+	display: block;
+	float: left;
+
+	.datepicker {
+		@extend .form-element-whiteout;
+		width: 75%;
+		margin-left: 20px; 
+	} 
+}
+
+.form-timepicker {
+	display: block;
+	float: left;
+	width: 60px;
+
+	.timepicker {
+		@extend .form-element-whiteout; 
+	} 
+}
+
+#ui-datepicker-div {
+	border: 1px solid $color-C3;
+	@include border-radius(0 0 3px 3px);
+	background: $color-white;
+	padding: 0;
+	margin-left: 0 - $unit * 3;
+	margin-top: 6px;
+	display: none;
+	text-align: center;
+	overflow: hidden; 
+	z-index: 60;
+}
+
+.ui-datepicker-trigger {
+	position: absolute;
+	top: 0;
+	left: 0; 
+}
+
+.pagination { 
+	li {
+		list-style: none;
+		float: left;
+		padding: 5px 5px;
+		a {
+			font-family: $font-regular;
+			font-size: 11px;
+			font-weight: bold;
+			color: $color-C4;
+		}
+	}
+
+	.active {
+		color: $color-C2;
+	}
+	.link a {
+		position: relative;		
+		display: block;
+		height: 15px;
+		width: 15px;
+		top: 0px;
+	}
+	.first-on a {
+		@include sprite-at-position(1, 3);			
+	}
+	.first-off a {
+		@include sprite-at-position(1, 4);			
+	}
+
+	.previous-on a {
+		@include sprite-at-position(2, 3);			
+	}
+	.previous-off a {
+		@include sprite-at-position(2, 4);			
+	}
+
+	.next-on a {
+		margin-left:10px;
+		@include sprite-at-position(3, 3);			
+	}
+	.next-off a {
+		margin-left:10px;
+		@include sprite-at-position(3, 4);		
+	}
+
+	.last-on a {
+		@include sprite-at-position(4, 3);			
+	}
+	.last-off a {
+		@include sprite-at-position(4, 4);			
+	}
+}	
+
+.form-datepicker-open {
+	width: $unit * 19;
+	@include border-radius($unit $unit 0 0);
+	padding: 6px 5px 6px 10px; 
+}
+
+.ui-datepicker-calendar {
+	font: 11px/13px Arial, sans-serif;
+	border-collapse: inherit;
+	border-right: 1px solid $color-white;
+	margin-right: -2px;
+	width: 200px;
+
+	.ui-state-disabled {
+		color: $color-C3; 
+	}
+	.ui-state-disabled {
+		color: $color-C3; 
+	}
+	th {
+		display: none; 
+	}
+	td {
+		padding: 8px;
+		border-right: 1px solid $color-C3;
+		border-bottom: 1px solid $color-C3; 
+	}
+	a {
+		text-decoration: none;
+		color: $color-A1;
+		font-weight: bold; 
+	}
+}
+
+.ui-datepicker-title {
+	font: 16px/20px $custom-font-regular, Arial, sans-serif;
+	padding: 4px;
+	background-color: $color-C1; 
+	color: $color-white; 
+}
+
+.ui-datepicker-prev {
+	float: left;
+	padding: 8px 0 0 8px; 
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.ui-datepicker-next {
+	float: right;
+	padding: 8px 8px 0 0; 
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.timeEntry_control {
+	vertical-align: middle;
+	margin-left: 2px; 
+}
+
+* html .timeEntry_control {
+	margin-top: -4px; 
+}
+
+.ui-slider-horizontal {
+	height: 6 * $unit;
+	margin: 0 $unit;
+	width: 85%; 
+}
+
+.ui-slider {
+	position: absolute;
+	top: -20px;
+	left: -2px;
+	text-align: left;
+	border: none;
+	color: $color-C2; 
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	margin-left: -0.6em;
+	top: 0; 
+}
+
+.slider-ticks {
+	position: absolute;
+	margin-left: -15px;
+	bottom: -15px;
+	font-size: 10px;
+	color: $color-C3;
+
+	.tick {
+		padding: 0 14.5px;
+		float: left; 
+	} 
+}
+
+.ui-slider .ui-slider-handle {
+	cursor: default;
+	height: 30px;
+	position: absolute;
+	width: 20px;
+	z-index: 0;
+	color: $color-A2;
+	font-weight: bold;
+	background: url("../images/slider_point.png") center no-repeat;
+}
+
+.ui-autocomplete {
+	float: left;
+	text-align: left;
+	left: 0 !important;
+	width: 100% !important;
+	@include drop-down-shadow-border;
+
+	.ui-menu-item {
+		padding: $unit;
+		color: $color-C2; 
+	} 
+}
+
+.ui-selectmenu {
+	position: relative;
+	@extend .box-fix;
+	clear: none;
+	font-weight: bold;
+	margin-bottom: $unit;
+	
+	display: block;
+	height: 1.6em;
+	text-decoration: none;
+	overflow: hidden;
+	color: $color-C1;
+	margin: -2px 0 3px; 
+	padding-top: 1px;
+	
+	&:hover {
+		//@include linear-gradient($color-C2, $color-C3);
+	}
+}
+
+.ui-selectmenu-icon {
+	position: absolute;
+	right: 5px;
+	margin-top: 0;
+	top: 3px;
+	width: $unit * 2;
+	height: $unit * 2;
+	@include sprite-at-position(1, 5); 
+}
+
+.ui-selectmenu-menu {
+	z-index: 1005;
+	@include drop-down-shadow-border;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+	overflow: auto;
+	font-family: $custom-font-regular;
+
+	.ui-state-hover {
+		background-color: $color-C4; 
+	}
+	
+	a {
+		color: $color-C1;
+		font-size: 0.8em;
+	}
+}
+
+.ui-selectmenu-menu-dropdown {
+	background: $color-C1;
+	border: none;
+	
+	a {
+		color: $color-white;
+	}
+	.ui-state-hover {
+		background: $color-A1;
+	}
+}
+
+.ui-selectmenu-open {
+	visibility: visible; 
+}
+
+.ui-selectmenu-menu-popup {
+	margin-top: -1px; 
+}
+
+.ui-selectmenu-menu li {
+	padding: 0;
+	margin: 0;
+	display: block;
+	border-top: 1px dotted transparent;
+	border-bottom: 1px dotted transparent;
+	border-right-width: 0 !important;
+	border-left-width: 0 !important;
+	font-weight: normal !important; 
+}
+
+.ui-selectmenu-menu li a, .ui-selectmenu-status {
+	line-height: 1.4em;
+	display: block;
+	padding: 0.1em 0.5em;
+	outline: none;
+	text-decoration: none; 
+}
+
+.ui-selectmenu-menu li.ui-selectmenu-hasIcon a, .ui-selectmenu-hasIcon .ui-selectmenu-status {
+	padding-left: 20px;
+	position: relative;
+	margin-left: 5px; 
+}
+
+.ui-selectmenu-menu li .ui-icon, .ui-selectmenu-status .ui-icon {
+	position: absolute;
+	top: 1em;
+	margin-top: -4px;
+	left: 0; 
+}
+
+.ui-selectmenu-status {
+	line-height: 1.4em;
+}
+
+.ui-selectmenu-menu li span, 
+.ui-selectmenu-status span {
+	display: block;
+	margin-bottom: 0.2em; 
+}
+
+.ui-selectmenu-menu li .ui-selectmenu-item-header {
+	font-weight: bold; 
+}
+
+.ui-selectmenu-menu li .ui-selectmenu-item-footer {
+	opacity: 0.8; 
+}
+
+.ui-selectmenu-menu .ui-selectmenu-group {
+	font-size: 0.1em; 
+}
+
+.ui-selectmenu-menu .ui-selectmenu-group .ui-selectmenu-group-label {
+	line-height: 1.4em;
+	display: block;
+	padding: 0.6em 0.5em 0;
+	font-weight: bold; 
+}
+
+.ui-selectmenu-menu .ui-selectmenu-group ul {
+	margin: 0;
+	padding: 0; 
+}
+
+.ui-dialog {
+	position: absolute;
+	
+	.dialog-panel {
+		position: relative;
+		top: 0;
+	}
+}
+
+.dialog-panel {
+	@include rounded-shadow-box(10px 25px, $color-white, 10px); 
+	position: relative;
+	top: -999999px;
+
+	.controls {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
+}
+
+/* UI Widget Overlays */
+.ui-widget-overlay {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+
+.ui-widget-overlay { 
+	background: $color-C2 50% 50% repeat; 
+	opacity: .50; 
+	filter: Alpha(Opacity=50); 
+}
+
+.no-matches {
+	display: none;
+}
+
+.link {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.primary-link {
+	color: $color-A1;
+	@extend .link;
+	
+	&:hover {
+		color: $color-C3;
+	}
+}
+
+.secondary-link {
+	@extend .link;
+	color: $color-C2;
+	
+	&:hover {
+		color: $color-C1;
+	}
+}
+
+.placeholder
+{
+	color: $color-C2;
+}
+
+.disabled {
+	display: none !important;
+}

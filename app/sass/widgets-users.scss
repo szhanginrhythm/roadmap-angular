@@ -1,0 +1,105 @@
+/***
+ User widgets
+**/
+
+@mixin user-navitem {
+	color: $color-white;
+	font-family: $custom-font-bold, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	margin: 0;
+	
+	a {
+		color: $color-white;
+		&:hover {
+			color: $color-C1;
+		}
+	}
+}
+
+
+.w-UserTools {
+	.nav-item {
+		float: left;
+		padding-top: 3px;
+	}
+
+	.user-nav {
+		display: inline !important;
+		.nav-item,
+		.current-username {
+			@include user-navitem;
+		}
+		.current-username {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.application-nav  {
+		display: inline !important;
+		float: right;
+		position: relative;
+		top: 0;
+		right: 50px;
+		.nav-item  {
+			@include user-navitem;
+			a {
+				@include border-radius-extended(3px, 3px);
+				padding: 10px 15px;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+			a {
+				color: $color-white;
+				background: $color-C1;
+			}
+			
+		}
+		.selected a,
+		.nav-item a:hover {
+			background: $color-white;
+			color: $color-C1;
+		}
+	}
+
+	.charter-tools-nav {
+		position:absolute;
+		display:block;
+		width: 600px;
+		top: 97px;
+		right: 0;
+		left: auto;
+	}
+
+	.user-nav { 
+		float: right; 
+	}
+}
+
+
+.w-CreateUser {
+	.w-head .hdr {
+		display: block;
+		padding: 0;
+		color: $color-C1;
+		line-height: 2em;
+		font-size: 12px;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-family: $custom-font-bold, Arial, sans-serif; 
+	}
+	select,
+	input, 
+	textarea  {
+		border:1px solid $color-C2;
+		font-size:16px;
+		padding:4px;
+		margin-bottom: $unit;
+		font-weight: normal;
+		color: $color-C1;
+		font-family: $custom-font-regular, Arial, sans-serif; 
+	}
+}

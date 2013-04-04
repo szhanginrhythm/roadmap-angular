@@ -1,0 +1,68 @@
+@media print {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000032}}
+  .page-head-c, .page-body-c, .page-foot-c {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000033}}
+  .colx1 {
+    width: 8%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000034}}
+  .colx2 {
+    width: 16%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000035}}
+  .colx3 {
+    width: 24%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000036}}
+  .colx4 {
+    width: 32%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000037}}
+  .colx5 {
+    width: 40%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000038}}
+  .colx6 {
+    width: 48%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\000039}}
+  .colx7 {
+    width: 56%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000310}}
+  .colx8 {
+    width: 64%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000311}}
+  .colx9 {
+    width: 72%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000312}}
+  .colx10 {
+    width: 80%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000313}}
+  .colx11 {
+    width: 88%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000314}}
+  .colfull {
+    width: 96%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000316}}
+  .product-details-container .colx2 {
+    width: 20%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000317}}
+  .product-details-container .colx6 {
+    width: 44%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000318}}
+  .w-UserTools, .w-CreateProduct, .copy-product-roadmap, .add-theme-actions-container, .add-feature-container, .print-product-roadmap, .controls .close-control, .controls .remove-control, .w-ActionSet {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/bhulku\/\.netbeans\/7\.0\/config\/GF3\/domain1\/docroot\/ProductRoadMap\/sass\/print\.scss}line{font-family:\0000319}}
+  .product-list-row {
+    width: 100%; } }
