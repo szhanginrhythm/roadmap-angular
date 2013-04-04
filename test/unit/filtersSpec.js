@@ -8,7 +8,7 @@ define([
 	'use strict';
 
 	describe('filter', function() {
-		beforeEach(mocks.module('myApp.filters'));
+		beforeEach(mocks.module('productRoadmap.filters'));
 		describe('interpolate', function() {
 			beforeEach(mocks.module(function($provide) {
 				$provide.value('version', 'TEST_VER');

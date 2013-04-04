@@ -8,7 +8,7 @@ define([
 	'use strict';
 
 	describe('directives', function() {
-		beforeEach(mocks.module('myApp.directives'));
+		beforeEach(mocks.module('productRoadmap.directives'));
 
 		describe('app-version', function() {
 			it('should print current version', function() {
