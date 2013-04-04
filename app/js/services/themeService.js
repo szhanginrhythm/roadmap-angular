@@ -9,6 +9,9 @@ define(['services/utilService'], function(utilService){
         return {
             getThemes: function () {
                 return themes;
+            },
+            addThemeToProduct: function () {
+
             }
         };
     }]];
