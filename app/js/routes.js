@@ -40,6 +40,17 @@ define(['angular', 'app', 'config'], function(angular, app, config) {
                 })
         );
 
+        $routeProvider.when('/monthly',
+            config.getResolveRoute({
+                templateUrl:'app/partials/monthly.html',
+                controllerName: 'MonthlyCtrl',
+                controllerFile: 'controllers/monthlyCtrl',
+                serviceFiles: ['services/utilService']
+//                directiveFiles: ['directives/version'],
+//                filterFiles: ['filters/interpolate']
+            })
+        );
+
         $routeProvider.otherwise({redirectTo: '/view1'});
 	}]);
 
