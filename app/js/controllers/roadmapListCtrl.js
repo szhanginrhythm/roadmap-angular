@@ -25,6 +25,7 @@ define(['services/roadmapService', 'services/utilService'], function () {
                 $scope.durations = utilService.getQuarters();
             }
             $scope.roadmap = {};
+            $scope.roadmap.id = $scope.roadmaps.length + 1;
             $scope.roadmap.startDate = $scope.durations[0];
             $scope.roadmap.type = type;
         };

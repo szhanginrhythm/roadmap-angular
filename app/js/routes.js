@@ -19,7 +19,7 @@ define(['angular', 'app', 'config'], function (angular, app, config) {
                 templateUrl: 'app/partials/roadmap.html',
                 controllerName: 'RoadmapCtrl',
                 controllerFile: 'controllers/roadmapCtrl',
-                serviceFiles: ['services/utilService']
+                serviceFiles: ['services/utilService', 'services/roadmapService']
             })
             );
 

@@ -28,6 +28,9 @@ define(['services/utilService'], function (utilService) {
             getRoadmaps: function () {
                 return roadmaps;
             },
+            getRoadmapById: function (id) {
+                return roadmaps;
+            },
             addRoadmap: function (roadmap) {
                 roadmaps.push(roadmap);
                 utilService.saveToLocal(key, roadmaps);

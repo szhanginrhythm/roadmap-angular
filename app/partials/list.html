@@ -18,7 +18,7 @@
 
     <ul>
         <li ng-repeat="roadmap in roadmaps">
-            <span>{{ roadmap.name }} </span> | 
+            <span><a ng-href="#/roadmap/{{roadmap.id}}">{{ roadmap.name }}</a></span> | 
             <span>{{ roadmap.type }} </span> | 
             <span>{{ formattedDate(roadmap) }} </span>
         </li>
