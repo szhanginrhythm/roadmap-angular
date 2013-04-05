@@ -4,6 +4,7 @@ define(['services/utilService'], function (utilService) {
     return ['roadmapService', ['utilService', function (utilService) {
 
 //        roadmap {
+//            id: '1',
 //            name: '',
 //            type: 'Monthly' or 'Quarterly',
 //            startDate: { 'month': m, 'year': y }
@@ -47,11 +48,25 @@ define(['services/utilService'], function (utilService) {
                 });
                 return return_val;
             },
+            getRoadmapIndexById: function (id) {
+                var return_val;
+                angular.forEach(roadmaps, function (roadmap, key) {
+                    if (roadmap.id === parseInt(id, 10)) {
+                        return_val = key;
+                        return;
+                    }
+                });
+                return return_val;
+            },
             addRoadmap: function (roadmap) {
                 roadmaps.push(roadmap);
                 utilService.saveToLocal(key, roadmaps);
             },
-            deleteRoadmap: function (roadmaps, roadmapIndex) {
+            deleteRoadmapById: function (id) {
+                roadmaps.splice(this.getRoadmapIndexById(id), 1);
+                utilService.saveToLocal(key, roadmaps);
+            },
+            deleteRoadmap: function (roadmapIndex) {
                 roadmaps.splice(roadmapIndex, 1);
                 utilService.saveToLocal(key, roadmaps);
             },
@@ -86,15 +101,14 @@ define(['services/utilService'], function (utilService) {
                     return_val = { date: period.date, details: []};
                     this.addStory(theme, return_val);
                 }
-                console.log(return_val);
                 return return_val;
             },
             addDetail: function (story, detail) {
                 story.details.push(detail);
                 utilService.saveToLocal(key, roadmaps);
             },
-            deleteDetail: function (story, detailIndex) {
-                story.details.splice(detailIndex, 1);
+            deleteDetail: function (story, detail_index) {
+                story.details.splice(detail_index, 1);
                 utilService.saveToLocal(key, roadmaps);
             },
             generateTimeperiods: function (type, startDate) {

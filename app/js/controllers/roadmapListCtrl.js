@@ -32,6 +32,10 @@ define(['services/roadmapService', 'services/utilService'], function () {
             }
         };
 
+        $scope.deleteRoadmap = function (id) {
+            roadmapService.deleteRoadmapById(id);
+        };
+
         $scope.saveRoadmap = function () {
             //Sanitize the values
             $scope.roadmap.startDate = utilService.getMonthIndex($scope.roadmap.startDate);

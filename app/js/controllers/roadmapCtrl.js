@@ -44,5 +44,13 @@ define(['services/roadmapService', 'services/utilService'],
                 roadmapService.addDetail(story, $scope.newDetail[theme.name + period.formatted]);
                 $scope.newDetail[theme.name + period.formatted] = undefined;
             };
+
+            $scope.deleteTheme = function (theme_index) {
+                roadmapService.deleteTheme($scope.roadmap, theme_index);
+            };
+
+            $scope.deleteDetail = function (story, detail_index) {
+                roadmapService.deleteDetail(story, detail_index);
+            };
         }]];
     });

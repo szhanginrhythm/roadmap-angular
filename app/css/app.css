@@ -1,5 +1,8 @@
-ul.unstyled {
-    list-style-type: none;
-    margin-left: 10px;
-    padding-left: 0px;
+[class^="icon-"].icon-red,
+[class*=" icon-"].icon-red {
+    color: red;
+}
+
+.icon-subtle {
+    color: #AAA;
 }

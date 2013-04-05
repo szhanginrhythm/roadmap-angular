@@ -1,27 +1,35 @@
 <div class="roadmapListFrame">
-    <ul class="menu">
-        <li><a ng-click="createNew('Monthly')">+ Monthly</a></li>
-        <li><a ng-click="createNew('Quarterly')">+ Quarterly</a></li>
-    </ul>
-
-    <span>{{ title }}</span>
-
-    <div ng-show="roadmap" class="create-container">
-        <input ng-model="roadmap.name">
-
-        <div class="select-duration">
-            <select ng-model="roadmap.startDate" ng-options="duration for duration in durations"></select>
-        </div>
-
-        <button ng-click="saveRoadmap()">Save</button>
+    <div class="btn-group">
+        <a class="btn" ng-click="createNew('Monthly')">+ Monthly</a>
+        <a class="btn" ng-click="createNew('Quarterly')">+ Quarterly</a>
     </div>
 
-    <ul>
-        <li ng-repeat="roadmap in roadmaps">
-            <span><a ng-href="#/roadmap/{{roadmap.id}}">{{ roadmap.name }}</a></span> | 
-            <span>{{ roadmap.type }} </span> | 
-            <span>{{ formattedDate(roadmap) }} </span>
-        </li>
-    </ul>
+    <form ng-show="roadmap" class="create-container">
+        <fieldset>
+            <legend>Create Roadmap</legend>
+            <label>Name</label>
+            <input placeholder="Project Name..." class="input-xxlarge" ng-model="roadmap.name">
+    
+            <select ng-model="roadmap.startDate" ng-options="duration for duration in durations"></select>
+    
+            <button class="btn" ng-click="saveRoadmap()">Save</button>
+        </fieldset>
+    </form>
 
+    <h2>{{ title }}</h2>
+
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Start Date</th>
+        </tr>
+        <tr ng-repeat="roadmap in roadmaps">
+            <td>{{ roadmap.id }}</td>
+            <td><a ng-href="#/roadmap/{{roadmap.id}}">{{ roadmap.name }}</a> <a ng-click="deleteRoadmap(roadmap.id)"><i class="icon-remove icon-red"></i></a></td>
+            <td>{{ roadmap.type }} </td>
+            <td>{{ formattedDate(roadmap) }} </td>
+        </tr>
+    </table>
 </div>
