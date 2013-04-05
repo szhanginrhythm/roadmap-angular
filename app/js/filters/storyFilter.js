@@ -3,16 +3,14 @@
 define(['services/utilService'], function (utilService) {
     return [ 'storyFilter', [function () {
         return function (input, search) {
-            console.log(input);
-            var return_val;
+            var return_val = [];
             angular.forEach(input, function (story, value) {
                 if (story.date.month === search.date.month
                         && story.date.year === search.date.year) {
-                    return_val = story;
-                    return;
+                    return_val.push(story);
                 }
             });
-            return input;
+            return return_val;
         };
     }]];
 });

@@ -44,19 +44,5 @@ define(['services/roadmapService', 'services/utilService'],
                 roadmapService.addDetail(story, $scope.newDetail[theme.name + period.formatted]);
                 $scope.newDetail[theme.name + period.formatted] = undefined;
             };
-
-            /**
-            $scope.getStoriesByPeriod = function (date) {
-                var return_val;
-                angular.forEach($scope.theme.stories, function (story, value) {
-                    if (story.date.month === date.month
-                            && story.date.year === date.year) {
-                        return_val = story;
-                        return;
-                    }
-                });
-                return return_val;
-            };
-            **/
         }]];
     });

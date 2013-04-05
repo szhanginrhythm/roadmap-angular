@@ -17,6 +17,13 @@ define(['services/utilService'], function (utilService) {
 //                                           { text: "textddd" },
 //                                           { text: "story2"}
 //                                       ]
+//                                      },
+//                                      {
+  //                                     date: {month: m, year: y},
+//                                       details:  [
+//                                           { text: "textddd" },
+//                                           { text: "story2"}
+//                                       ]
 //                                      }
 //                                   ]
 //                      }
