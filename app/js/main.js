@@ -2,13 +2,15 @@
 require.config({
     paths: {
         jquery: 'lib/jquery/jquery-1.9.1',
+        bootstrap: 'lib/bootstrap/js/bootstrap',
         angular: 'lib/angular/angular',
         text: 'lib/require/text'
     },
     baseUrl: 'app/js',
     shim: {
         'angular' : {'exports' : 'angular'},
-        'angularMocks': {deps: ['angular'], 'exports': 'angular.mock'}
+        'angularMocks': {deps: ['angular'], 'exports': 'angular.mock'},
+        'bootstrap' : {deps: ['jquery']}
     },
     priority: [
         "angular"
@@ -18,9 +20,10 @@ require.config({
 require([
     'jquery',
     'angular',
+    'bootstrap',
     'app',
     'routes'
-], function ($, angular, app, routes) {
+], function ($, angular, bootstrap, app, routes) {
     'use strict';
     $(document).ready(function () {
         var $html = $('html');

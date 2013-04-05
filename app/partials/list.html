@@ -1,7 +1,14 @@
 <div class="roadmapListFrame">
     <div class="btn-group">
-        <a class="btn" ng-click="createNew('Monthly')">+ Monthly</a>
-        <a class="btn" ng-click="createNew('Quarterly')">+ Quarterly</a>
+        <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+            <i class="icon-plus"></i>
+            Create Roadmap
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a ng-click="createNew('Monthly')">Monthly</a></li>
+            <li><a ng-click="createNew('Quarterly')">Quarterly</a></li>
+        </ul>
     </div>
 
     <form ng-show="roadmap" class="create-container">

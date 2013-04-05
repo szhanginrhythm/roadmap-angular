@@ -19,13 +19,15 @@ define(['services/roadmapService', 'services/utilService'], function () {
         };
 
         $scope.createNew = function (type) {
+            var next_id;
             if (type === "Monthly") {
                 $scope.durations = utilService.getMonths();
             } else {
                 $scope.durations = utilService.getQuarters();
             }
+            next_id = $scope.roadmaps[$scope.roadmaps.length - 1].id + 1;
             $scope.roadmap = {
-                id : $scope.roadmaps.length + 1,
+                id : next_id,
                 themes : [],
                 startDate : $scope.durations[0],
                 type : type
