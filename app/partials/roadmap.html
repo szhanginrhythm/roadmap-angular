@@ -1,6 +1,37 @@
-<div class="roadmapListFrame">
+<div class="roadmapFrame">
 
-    <span>{{ title }}</span>
-
+    <h2>{{ roadmap.name }}</h2>
+    <table border="1">
+        <tr>
+            <td>Theme</td>
+            <td ng-repeat="period in periods">
+                {{ period.formatted }}
+            </td>
+        </tr>
+        <tr ng-repeat="theme in roadmap.themes">
+            <td>{{ theme.name }}</td>
+            <td ng-repeat="period in periods">
+                <ul class="unstyled">
+                    <li ng-repeat="story in theme.stories | storyFilter:period">
+                        <ul class="unstyled">
+                            <li ng-repeat="detail in story.details">
+                            {{ detail.text }}
+                            </li>
+                        </ul>
+                    </li>
+                    <li ng-show="newDetail[theme.name + period.formatted]">
+                        <input ng-model="newDetail[theme.name + period.formatted].text" type="text" />
+                        <button ng-click="saveDetail(theme, period)">Save</button>
+                    </li>
+                </ul>
+                <button ng-click="createDetail(theme, period)" ng-hide="newDetail[theme.name + period.formatted]">+ Add</button>
+            </td>
+        </tr>
+    </table> 
+    <span><button ng-click="createTheme()">+ Add Theme</button></span>
+    <div ng-show="theme">
+        <input ng-model="theme.name" />
+        <button ng-click="saveTheme()">Add</button>
+    </div>
 </div>
 
